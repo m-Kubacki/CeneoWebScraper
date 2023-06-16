@@ -1,0 +1,89 @@
+{% extends "base.html.jinja" %}
+{%block content%}
+	<p class="h1 text-center my-5">Nazwa produktu</p>
+	<table id="example" class="table table-striped" style="width: 100%">
+		<thead>
+			<tr>
+				<th>id opinii</th>
+				<th>autor</th>
+				<th>rekomendacja</th>
+				<th>liczba gwiazdek</th>
+				<th>potwierdzenie zakupem</th>
+				<th>data opinii</th>
+				<th>data zakupu</th>
+				<th>uznano za przydatna</th>
+				<th>uznano za nieprzydatna</th>
+				<th>tresc</th>
+				<th>Liczba wad</th>
+				<th>Liczba zalet</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>123</td>
+				<td>Asad</td>
+				<td>Tak</td>
+				<td>4</td>
+				<td>Tak</td>
+				<td>21/04/2023</td>
+				<td>13/04/2023</td>
+				<td>15</td>
+				<td>2</td>
+				<td>Polecam</td>
+				<td>1</td>
+				<td>5</td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+		<!-- Button trigger modal -->
+		<button
+			type="button"
+			class="btn btn-primary"
+			data-bs-toggle="modal"
+			data-bs-target="#exampleModal"
+		>
+			Zobacz wykresy
+		</button>
+
+		<!-- Modal -->
+		<div
+			class="modal fade"
+			id="exampleModal"
+			tabindex="-1"
+			aria-labelledby="exampleModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">Wykresy</h1>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">
+						<p>Wykres slupkowy</p>
+						<img src="./src/bar_graph.png" alt="" srcset="" />
+					</div>
+					<div class="modal-body">
+						<p>Wykres kolowy</p>
+						<img src="./src/cirlce_graph.jpg" alt="" srcset="" />
+					</div>
+					<div class="modal-footer">
+						<button
+							type="button"
+							class="btn btn-secondary"
+							data-bs-dismiss="modal"
+						>
+							Close
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{%endblock content%}
