@@ -1,7 +1,7 @@
 
 {% extends "base.html.jinja" %}
 			{% block content %}
-			<form action="./produkt.html">
+			<form method="POST" action="{{url_for('extract')}}">
 				<div class="container my-5">
 					<p class="h1 text-center my-5">Ekstrakcja opinii</p>
 					<div class="input-group input-group-lg">
@@ -9,6 +9,8 @@
 							>Podaj id produktu
 						</span>
 						<input
+							id='product_code'
+							name='product_code'
 							type="text"
 							class="form-control"
 							aria-label="Sizing example input"

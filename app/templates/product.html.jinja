@@ -1,40 +1,7 @@
 {% extends "base.html.jinja" %}
 {%block content%}
-	<p class="h1 text-center my-5">Nazwa produktu</p>
-	<table id="example" class="table table-striped" style="width: 100%">
-		<thead>
-			<tr>
-				<th>id opinii</th>
-				<th>autor</th>
-				<th>rekomendacja</th>
-				<th>liczba gwiazdek</th>
-				<th>potwierdzenie zakupem</th>
-				<th>data opinii</th>
-				<th>data zakupu</th>
-				<th>uznano za przydatna</th>
-				<th>uznano za nieprzydatna</th>
-				<th>tresc</th>
-				<th>Liczba wad</th>
-				<th>Liczba zalet</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>123</td>
-				<td>Asad</td>
-				<td>Tak</td>
-				<td>4</td>
-				<td>Tak</td>
-				<td>21/04/2023</td>
-				<td>13/04/2023</td>
-				<td>15</td>
-				<td>2</td>
-				<td>Polecam</td>
-				<td>1</td>
-				<td>5</td>
-			</tr>
-		</tbody>
-	</table>
+	<p class="h1 text-center my-5">{{product_code}}</p>
+ {{opinions|safe}}
 	<div>
 		<!-- Button trigger modal -->
 		<button
@@ -45,7 +12,6 @@
 		>
 			Zobacz wykresy
 		</button>
-
 		<!-- Modal -->
 		<div
 			class="modal fade"
@@ -87,3 +53,10 @@
 		</div>
 	</div>
 {%endblock content%}
+{%block scripts%}
+<script>
+$(document).ready(function () {
+        $('#opinions').DataTable();
+    });
+</script>
+{%endblock scripts%}
