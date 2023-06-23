@@ -4,183 +4,114 @@
 				<canvas id="stars"></canvas>
 				</div>
 				<div class="col-6">
-					<canvas id="pie">
-					</canvas>
+					<canvas id="pie"></canvas>
 				</div>
 		{%endblock content%}
 	{%block scripts%}
 		<script>
-							const data = [
-								{
-									stars: 0.0,
-									count: 0,
-									bgcolor: "#FFB6C1",
-									bgborder: "#DC143C",
-								},
-								{
-									stars: 0.5,
-									count: 3,
-									bgcolor: "#FFB6C1",
-									bgborder: "#DC143C",
-								},
-								{
-									stars: 1.0,
-									count: 1,
-									bgcolor: "#FFB6C1",
-									bgborder: "#DC143C",
-								},
-								{
-									stars: 1.5,
-									count: 2,
-									bgcolor: "#FFB6C1",
-									bgborder: "#DC143C",
-								},
-								{
-									stars: 2.0,
-									count: 1,
-									bgcolor: "#FFB6C1",
-									bgborder: "#DC143C",
-								},
-								{
-									stars: 2.5,
-									count: 0,
-									bgcolor: "#FFB6C1",
-									bgborder: "#DC143C",
-								},
-								{
-									stars: 3.0,
-									count: 5,
-									bgcolor: "#B0E0E6",
-									bgborder: "#4682B4",
-								},
-								{
-									stars: 3.5,
-									count: 3,
-									bgcolor: "#B0E0E6",
-									bgborder: "#4682B4",
-								},
-								{
-									stars: 4.0,
-									count: 19,
-									bgcolor: "#BDFCC9",
-									bgborder: "#228B22",
-								},
-								{
-									stars: 4.5,
-									count: 19,
-									bgcolor: "#BDFCC9",
-									bgborder: "#228B22",
-								},
-								{
-									stars: 5.0,
-									count: 79,
-									bgcolor: "#BDFCC9",
-									bgborder: "#228B22",
-								},
-							];
-							// 			const data = [
-							// { stars: 0.0, count: 0, bgcolor: "#FFB6C1", bgborder: "#DC143C"},
-							// { stars: 0.5, count: 3, bgcolor: "#FFB6C1", bgborder: "#DC143C"},
-							// { stars: 1.0, count: 1, bgcolor: "#FFB6C1", bgborder: "#DC143C"},
-							// { stars: 1.5, count: 2, bgcolor: "#FFB6C1", bgborder: "#DC143C"},
-							// { stars: 2.0, count: 1, bgcolor: "#FFB6C1", bgborder: "#DC143C"},
-							// { stars: 2.5, count: 0, bgcolor: "#FFB6C1", bgborder: "#DC143C"},
-							// { stars: 3.0, count: 5, bgcolor: "#B0E0E6", bgborder: "#4682B4"},
-							// { stars: 3.5, count: 3, bgcolor: "#B0E0E6", bgborder: "#4682B4"},
-							// { stars: 4.0, count: 19, bgcolor: "#BDFCC9", bgborder: "#228B22"},
-							// { stars: 4.5, count: 19, bgcolor: "#BDFCC9", bgborder: "#228B22"},
-							// { stars: 5.0, count: 79, bgcolor: "#BDFCC9", bgborder: "#228B22"},
-							// 			];
-							new Chart(document.getElementById("stars"), {
-								type: "bar",
-								data: {
-									labels: data.map((row) => row.stars),
-									datasets: [
-										{
-											label: "Liczba opinii",
-											data: data.map((row) => row.count),
-											backgroundColor: data.map((row) => row.bgcolor),
-											borderColor: data.map((row) => row.bgborder),
+			const data = [
+				{ stars: 0.0, count: 0, bgcolor: "#FFB6C1", bgborder: "#DC143C"},
+				{ stars: 0.5, count: 3, bgcolor: "#FFB6C1", bgborder: "#DC143C"},
+				{ stars: 1.0, count: 1, bgcolor: "#FFB6C1", bgborder: "#DC143C"},
+				{ stars: 1.5, count: 2, bgcolor: "#FFB6C1", bgborder: "#DC143C"},
+				{ stars: 2.0, count: 1, bgcolor: "#FFB6C1", bgborder: "#DC143C"},
+				{ stars: 2.5, count: 0, bgcolor: "#FFB6C1", bgborder: "#DC143C"},
+				{ stars: 3.0, count: 5, bgcolor: "#B0E0E6", bgborder: "#4682B4"},
+				{ stars: 3.5, count: 3, bgcolor: "#B0E0E6", bgborder: "#4682B4"},
+				{ stars: 4.0, count: 19, bgcolor: "#BDFCC9", bgborder: "#228B22"},
+				{ stars: 4.5, count: 19, bgcolor: "#BDFCC9", bgborder: "#228B22"},
+				{ stars: 5.0, count: 79, bgcolor: "#BDFCC9", bgborder: "#228B22"},
+			];
+			new Chart(document.getElementById("stars"), {
+				type: "bar",
+				data: {
+					labels: data.map((row) => row.stars),
+					datasets: [
+						{
+							label: "Liczba opinii",
+							data: data.map((row) => row.count),
+							backgroundColor: data.map((row) => row.bgcolor),
+							borderColor: data.map((row) => row.bgborder),
 
-											borderWidth: 1,
-										},
-									],
-								},
-								options: {
-									plugins: {
-										legend: {
-											display: false,
-										},
-										title: {
-											display: true,
-											text: "Rozkład liczby gwiazdek w opiniach konsumentów",
-										},
-									},
-									scales: {
-										x: {
-											title: {
-												display: true,
-												text: "Liczba gwiazdek",
-											},
-										},
-										y: {
-											title: {
-												display: true,
-												text: "Liczba opinii",
-											},
-										},
-									},
-								},
-							});
+							borderWidth: 1,
+						},
+					],
+				},
+				options: {
+					plugins: {
+						legend: {
+							display: false,
+						},
+						title: {
+							display: true,
+							text: "Rozkład liczby gwiazdek w opiniach konsumentów",
+						},
+					},
+					scales: {
+						x: {
+							title: {
+								display: true,
+								text: "Liczba gwiazdek",
+							},
+						},
+						y: {
+							title: {
+								display: true,
+								text: "Liczba opinii",
+							},
+						},
+					},
+				},
+			});
 		</script>
 		<script>
-								const data2 = [
-									{
-										reco: "Nie polecam",
-										count: 3,
-										bgcolor: "#ffb6c1",
-										bgborder: "#dc143c",
-									},
-									{
-										reco: "Brak opinii",
-										count: 5,
-										bgcolor: "#b0e0e6",
-										bgborder: "#4682b4",
-									},
-									{
-										reco: "Polecam",
-										count: 19,
-										bgcolor: "#bdfcc9",
-										bgborder: "#228822",
-									},
-								];
+				const data2 = [
+					{
+						reco: "Nie polecam",
+						count: 3,
+						bgcolor: "#ffb6c1",
+						bgborder: "#dc143c",
+					},
+					{
+						reco: "Brak opinii",
+						count: 5,
+						bgcolor: "#b0e0e6",
+						bgborder: "#4682b4",
+					},
+					{
+						reco: "Polecam",
+						count: 19,
+						bgcolor: "#bdfcc9",
+						bgborder: "#228822",
+					},
+				];
 
-								new Chart(document.getElementById("pie"), {
-									type: "pie",
-									data: {
-										labels: data2.map((row) => row.reco),
-										datasets: [
-											{
-												label: "Liczba rekomendacji",
-												data: data2.map((row) => row.count),
-												backgroundColor: data2.map((row) => row.bgcolor),
-												borderColor: data2.map((row) => row.bgborder),
-												borderWidth: 1,
-											},
-										],
-									},
-									options: {
-										plugins: {
-											legend: {
-												display: true,
-											},
-											title: {
-												display: true,
-												text: "Rozkład liczby gwiazdek w opiniach konsumentów",
-											},
-										},
-									},
-								});
+				new Chart(document.getElementById("pie"), {
+					type: "pie",
+					data: {
+						labels: data2.map((row) => row.reco),
+						datasets: [
+							{
+								label: "Liczba rekomendacji",
+								data: data2.map((row) => row.count),
+								backgroundColor: data2.map((row) => row.bgcolor),
+								borderColor: data2.map((row) => row.bgborder),
+								borderWidth: 1,
+							},
+						],
+					},
+					options: {
+						plugins: {
+							legend: {
+								display: true,
+							},
+							title: {
+								display: true,
+								text: "Rozkład liczby gwiazdek w opiniach konsumentów",
+							},
+						},
+					},
+				});
 		</script>
 {%endblock scripts%}
 
